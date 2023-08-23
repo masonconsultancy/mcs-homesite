@@ -1,3 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
 html {
   font-size: 14px;
 }
@@ -18,21 +26,25 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 60px;  
 }
 
-.contact-info {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.card-logo {
+  width:48px;
+  height:48px;
 }
 
-    .contact-info h2 {
-        margin-bottom: 10px;
-    }
+.border-highlight {
+  border-color: #8080805e !important;
+}
 
-    .contact-info p {
-        margin: 10px 0;
-    }
+.banner-link {
+  background: rgb(36,0,31);
+  background: linear-gradient(90deg, rgba(36,0,31,0.3603816526610645) 19%, rgba(192,192,254,0.8057598039215687) 54%, rgba(192,192,254,0.7497373949579832) 76%, rgba(0,161,255,0) 100%);
+  border: none !important;
+}
+
+.bi-default-font {
+  font-size: 2rem;
+  color: cornflowerblue;
+}

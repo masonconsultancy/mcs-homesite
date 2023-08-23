@@ -4,45 +4,122 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="container">
 
-    <div class="container-fluid py-3">
-        <img class="w-100" src="~/images/homesite-banner.png" />
-    </div>
+@section SubMenu{
+    <nav id="quicklinks" class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"></a>
+        <ul class="nav nav-pills">
+            <a class="nav-item nav-link" href="#scrollspymissionstatement">
+                <div class="d-flex align-items-center">
+                    <div class="flex-fill">Mission Statement</div>
+                    <div class="bi bi-shield bi-default-font m-1"></div>
+                </div>
+            </a>
+            <a class="nav-item nav-link" href="#scrollspyservices">
+                <div class="d-flex align-items-center">
+                    <div class="flex-fill">Services</div>
+                    <div class="bi bi-terminal bi-default-font m-1"></div>
+                </div>
+            </a>
+            <a class="nav-item nav-link" href="#scrollspycontactus">
+                <div class="d-flex align-items-center">
+                    <div class="flex-fill">Contact Us</div>
+                    <div class="bi bi-envelope bi-default-font m-1"></div>
+                </div>
+            </a>
+        </ul>
+    </nav>
+}
 
-    <div class="container-fluid py-3">
-        <h2>Welcome to Our Company</h2>
-        <p>We are a software development company specializing in building innovative and robust software solutions.</p>
-        <p>Our services include:</p>
-        
-        <div class="row mb-2">
-            <div class="col-md-6">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-primary">.NET Core</strong>
-                        <h3 class="mb-0">Web Application Development</h3>                        
-                        <p class="card-text mb-auto">At our software development company, we are committed to delivering exceptional web development services to our clients. We have a team of highly skilled and experienced web developers who are proficient in a wide range of technologies and frameworks. Whether you need a simple informational website or a complex web application, we have the expertise to meet your requirements. Our web development process begins with a thorough understanding of your business goals and target audience. We then collaborate closely with you to create a customized web solution that aligns with your vision. From responsive design and user-friendly interfaces to robust backend development and seamless integration of functionalities, we ensure that your website not only looks great but also performs flawlessly across different devices and browsers. We follow industry best practices and adhere to the latest web development standards to deliver websites that are secure, scalable, and optimized for search engines. Our commitment to quality and client satisfaction drives us to continuously improve and stay updated with the latest trends and technologies in web development. Partner with us for reliable and innovative web development solutions that empower your business online.</p>
+<h2 id="scrollspymissionstatement" class="my-5">Welcome to Our Company</h2>
+
+<div class="row row-cols-1 row-cols-md-1 g-3 mb-3">
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class="d-flex">
+                        <div class="flex-fill">Mission Statement</div>
+                        <a class="bi bi-shield bi-default-font" href="#topofthepage"></a>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                    <div class="col p-4 d-flex flex-column position-static">
-                        <strong class="d-inline-block mb-2 text-success">App Development</strong>
-                        <h3 class="mb-0">Mobile App Development</h3>
-                        <p class="mb-auto">At our software development company, we pride ourselves on delivering top-notch mobile app development services to our clients. Our dedicated team of skilled mobile app developers is well-versed in the latest technologies and platforms, including iOS and Android. We understand that every business has unique requirements, so we begin by thoroughly analyzing your needs, target audience, and market trends. With this knowledge, we work closely with you to design and develop customized mobile applications that align with your business goals. From conceptualization and wireframing to UI/UX design and development, we ensure that your mobile app not only offers a visually appealing interface but also delivers a seamless user experience. Our developers follow industry best practices and leverage cutting-edge tools and frameworks to create robust, secure, and scalable mobile apps. We also offer thorough testing and quality assurance to ensure that your app performs flawlessly across different devices and operating systems. Whether you need a native app, hybrid app, or cross-platform solution, we have the expertise to bring your ideas to life. Partner with us for reliable and innovative mobile app development services that help you stay ahead in the competitive app market.</p>
-                    </div>
-                </div>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Our Mission Statement</h6>
+                <p class="card-text">
+                    "Empowering Innovation Through Seamless Technology Solutions"
+
+                    At Mason Consultancy Ltd, our mission is to inspire and innovate through our software solutions. We are dedicated to crafting exceptional software that not only meets the evolving needs of businesses but also paves the way for new possibilities. By harnessing the power of technology, we aim to empower our clients to achieve their goals efficiently and effectively.
+
+                    Guided by a passion for excellence, we strive to push the boundaries of what's possible in the digital realm. Our engineers work collaboratively to create software that not only addresses current challenges but also anticipates future trends. We believe in delivering solutions that are not just functional, but elegant and intuitive, enriching the user experience.
+
+                    Innovation is at the core of our ethos. We thrive on challenges and actively seek out opportunities to create solutions that transform industries. By embracing emerging technologies and staying at the forefront of advancements, we ensure that our clients are equipped with the tools they need to stay competitive in a rapidly evolving landscape.
+
+                    Above all, our commitment to integrity and transparency sets us apart. We build lasting partnerships with our clients, grounded in trust and mutual respect. Through open communication and a client-centric approach, we ensure that our solutions align with our clients' unique visions and aspirations.
+
+                    Join us on our journey to reshape industries, drive innovation, and create a brighter, more connected future through technology. At Mason Consultancy Ltd, we don't just develop software; we engineer possibilities.
+                </p>
             </div>
         </div>
-        
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <h2>Contact Information</h2>
-            <p><strong>Company Name:</strong> Mason Consultancy Ltd</p>
-            <p><strong>Phone:</strong> +44 7847 337097</p>
-            <p><strong>Email:</strong> gary.mason@mason-consultancy.com</p>
-        </div>
-
     </div>
 </div>
+
+<h2 id="scrollspyservices" class="my-5">Our Services</h2>
+
+<div class="row row-cols-1 row-cols-md-2 g-3 mb-3">
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class="d-flex">
+                        <div class="flex-fill">.NET Core</div>
+                        <a class="bi bi-terminal bi-default-font" href="#topofthepage"></a>
+                    </div>
+
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Web Application Development</h6>
+                <p class="card-text">We are committed to delivering exceptional web development services to our clients. We have a team of highly skilled and experienced web developers who are proficient in a wide range of technologies and frameworks. Whether you need a simple informational website or a complex web application, we have the expertise to meet your requirements. Our web development process begins with a thorough understanding of your business goals and target audience. We then collaborate closely with you to create a customized web solution that aligns with your vision. From responsive design and user-friendly interfaces to robust backend development and seamless integration of functionality, we ensure that your website not only looks great but also performs flawlessly across different devices and browsers. We follow industry best practices and adhere to the latest web development standards to deliver websites that are secure, scalable, and optimized for search engines. Our commitment to quality and client satisfaction drives us to continuously improve and stay updated with the latest trends and technologies in web development. Partner with us for reliable and innovative web development solutions that empower your business online.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class="d-flex">
+                        <div class="flex-fill">App Development</div>
+                        <a class="bi bi-google-play bi-default-font" href="#topofthepage"></a>
+                    </div>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Mobile App Development</h6>
+                <p class="card-text">We pride ourselves on delivering top-notch mobile app development services to our clients. We understand that every business has unique requirements, so we begin by thoroughly analyzing your needs, target audience, and market trends. With this knowledge, we work closely with you to design and develop customized mobile applications that align with your business goals. From conceptualization and wire-framing to UI/UX design and development, we ensure that your mobile app not only offers a visually appealing interface but also delivers a seamless user experience. Our developers follow industry best practices and leverage cutting-edge tools and frameworks to create robust, secure, and scalable mobile apps. We also offer thorough testing and quality assurance to ensure that your app performs flawlessly across different devices and operating systems. Whether you need a native app, hybrid app, or cross-platform solution, we have the expertise to bring your ideas to life. Partner with us for reliable and innovative mobile app development services that help you stay ahead in the competitive app market.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 id="scrollspycontactus" class="my-5">Contact Us</h2>
+
+<div class="row row-cols-1 row-cols-md-2 g-1 mb-3">
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class="d-flex">
+                        <div class="flex-fill">Contact Information</div>
+                        <a class="bi bi-envelope bi-default-font" href="#topofthepage"></a>
+                    </div>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Please Contact Us</h6>
+                <p class="card-text">
+                <p><strong>Company Name:</strong> Mason Consultancy Ltd</p>
+                <p><strong>Phone:</strong> +44 7847 337097 | <a href="tel:+44 7847 337097">Call US</a></p>
+                <p><strong>Email:</strong> gary.mason@mason-consultancy.com | <a href="mailto:gary.mason@mason-consultancy.com">Send Email</a></p>
+                <a class="btn btn-outline-info" role="button" href="https://api.whatsapp.com/send?phone=@Model.ChatMessageNumber&text=@Model.ChatMessageText">Chat With Us <i class="bi bi-whatsapp bi-default-font"></i></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/lib/index.js" asp-append-version="true"></script>
+}
