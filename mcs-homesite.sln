@@ -5,10 +5,6 @@ VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mcs-homesite", "mcs-homesite.csproj", "{F9F55581-9E9D-406E-A0AE-FA29AD25F828}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcs-api", "..\mcs-api\mcs-api.csproj", "{C0F603D9-66C1-4701-A923-6D05CDCC9117}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcs-contracts", "..\mcs-contracts\mcs-contracts.csproj", "{9723F7E2-43FD-4C47-BDA2-D76D20FFC73D}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{F9F55581-9E9D-406E-A0AE-FA29AD25F828}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9F55581-9E9D-406E-A0AE-FA29AD25F828}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9F55581-9E9D-406E-A0AE-FA29AD25F828}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C0F603D9-66C1-4701-A923-6D05CDCC9117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C0F603D9-66C1-4701-A923-6D05CDCC9117}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C0F603D9-66C1-4701-A923-6D05CDCC9117}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C0F603D9-66C1-4701-A923-6D05CDCC9117}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9723F7E2-43FD-4C47-BDA2-D76D20FFC73D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9723F7E2-43FD-4C47-BDA2-D76D20FFC73D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9723F7E2-43FD-4C47-BDA2-D76D20FFC73D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9723F7E2-43FD-4C47-BDA2-D76D20FFC73D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

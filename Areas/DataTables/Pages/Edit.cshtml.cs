@@ -1,8 +1,9 @@
-﻿using mcs_contracts.Users;
+﻿using mcs_homesite.Areas.Models.Users;
 using mcs_homesite.Areas.DataTables.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using UserDto = mcs_homesite.Areas.Models.Users.UserDto;
 
 namespace mcs_homesite.Areas.DataTables.Pages
 {
