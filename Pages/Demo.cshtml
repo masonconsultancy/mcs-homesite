@@ -1,5 +1,5 @@
 ﻿@page
-@model mcs_homesite.Pages.DemoModel
+@model DemoModel
 @{
     ViewData["Title"] = "Demo Page";
 }
@@ -7,4 +7,35 @@
 
 <h2 class="my-5">Demo Page</h2>
 
-<h3>Under Construction</h3>
+@section SubMenu{
+    <nav id="quicklinks" class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand"></a>
+        <ul class="nav nav-pills">
+            <a class="nav-item nav-link" asp-page="Index" asp-area="DataTables">
+                <div class="d-flex align-items-center">
+                    <div class="flex-fill">DataTables</div>
+                    <div class="bi bi-arrow-right bi-default-font m-1"></div>
+                </div>
+            </a>
+        </ul>
+    </nav>
+}
+
+<div class="row row-cols-1 row-cols-md-1 g-3 mb-3">
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <div class="d-flex">
+                        <div class="flex-fill">DataTables Examples</div>
+                        <a class="bi bi-arrow-right bi-default-font" asp-area="DataTables" asp-page="Index"></a>
+                    </div>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">DataTables</h6>
+                <p class="card-text">
+                    Examples of DataTables
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
