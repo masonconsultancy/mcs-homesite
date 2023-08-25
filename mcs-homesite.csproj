@@ -8,7 +8,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Areas\DataTables\Data\SampleData\users.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="Areas\DataTables\Pages\dataTablesIndex.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Areas\DataTables\Data\SampleData\users.json" />
   </ItemGroup>
 
   <ItemGroup>

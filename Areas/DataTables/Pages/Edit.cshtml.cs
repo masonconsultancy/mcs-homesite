@@ -65,9 +65,9 @@ namespace mcs_homesite.Areas.DataTables.Pages
             return RedirectToPage("./Index");
         }
 
-        private bool UserDtoExists(long id)
+        private bool UserDtoExists(long? id)
         {
-          return (_context.UserDto?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (id != null) && (_context.UserDto?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }
