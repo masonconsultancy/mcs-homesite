@@ -1,5 +1,4 @@
 using mcs_homesite.Areas.DataTables.Data;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,13 +16,9 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-if (app.Environment.IsDevelopment())
-{
-    using var scope = app.Services.CreateScope();
-    var dbContext = scope.ServiceProvider.GetRequiredService<mcs_homesiteContext>();
-    dbContext.Database.EnsureCreated();
-    //do your stuff....
-}
+using var scope = app.Services.CreateScope();
+var dbContext = scope.ServiceProvider.GetRequiredService<mcs_homesiteContext>();
+dbContext.Database.EnsureCreated();
 
 
 app.UseHttpsRedirection();
