@@ -1,4 +1,9 @@
 ﻿$(document).ready(function () {
-  let table = new DataTable('#usertable', {
+
+  let table1 = new DataTable('#defaultDemoTable', {
   });
+
+  let table2 = new DataTable('#columnRenderDemoTable', {
+  });
+
 });

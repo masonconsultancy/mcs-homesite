@@ -7,75 +7,32 @@
 
 <h1>DataTables</h1>
 
-<div class="row row-cols-1 row-cols-md-1 g-3 mb-3">
-    <div class="col">
-        <div class="card bg-dark border-highlight h-100">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <div class="flex-fill">DataTables Basic Example</div>
-                </h5>
-                <h6 class="card-subtitle mb-2 text-muted">Simple Example with default options</h6>
-                <p class="card-text">
-                    <table id="usertable" class="table">
-                        <thead>
-                            <tr>
-                                <th colspan="6">
-                                    <a asp-page="Create"><i class="bi bi-plus-circle bi-options-font"></i></a>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UserDto[0].Id)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UserDto[0].Name)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UserDto[0].Email)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UserDto[0].UserName)
-                                </th>
-                                <th>
-                                    @Html.DisplayNameFor(model => model.UserDto[0].Password)
-                                </th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.UserDto)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Id)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Name)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Email)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.UserName)
-                                    </td>
-                                    <td>
-                                        @Html.DisplayFor(modelItem => item.Password)
-                                    </td>
-                                    <td>
-                                        <a asp-page="/Edit" asp-route-id="@item.Id"><i class="bi bi-pencil bi-options-font"></i></a>
-                                        <a asp-page="/Details" asp-route-id="@item.Id"><i class="bi bi-view-list bi-options-font"></i></a>
-                                        <a asp-page="/Delete" asp-route-id="@item.Id"><i class="bi bi-x-circle bi-options-font"></i></a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </p>
+<div class="accordion" id="accordionDataTables">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Default Demo
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionDataTables">
+            <div class="accordion-body">
+                <partial name="_default" model="Model.UserDto" />
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Column Render Demo
+            </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionDataTables">
+            <div class="accordion-body">
+                <partial name="_columnRender" model="Model.UserDto" />
             </div>
         </div>
     </div>
 </div>
-
 
 
 @section Scripts
