@@ -19,11 +19,14 @@
                     <table id="usertable" class="table">
                         <thead>
                             <tr>
-                                <th colspan="5">
+                                <th colspan="6">
                                     <a asp-page="Create"><i class="bi bi-plus-circle bi-options-font"></i></a>
                                 </th>
                             </tr>
                             <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.UserDto[0].Id)
+                                </th>
                                 <th>
                                     @Html.DisplayNameFor(model => model.UserDto[0].Name)
                                 </th>
@@ -43,6 +46,9 @@
                             @foreach (var item in Model.UserDto)
                             {
                                 <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Name)
                                     </td>

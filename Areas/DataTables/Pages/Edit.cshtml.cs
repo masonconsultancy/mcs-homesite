@@ -26,12 +26,12 @@ namespace mcs_homesite.Areas.DataTables.Pages
                 return NotFound();
             }
 
-            var userdto =  await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
-            if (userdto == null)
+            var userDto =  await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
+            if (userDto == null)
             {
                 return NotFound();
             }
-            UserDto = userdto;
+            UserDto = userDto;
             return Page();
         }
 

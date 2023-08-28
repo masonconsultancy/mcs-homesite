@@ -6,6 +6,7 @@ using UserDto = mcs_homesite.Areas.Models.Users.UserDto;
 
 namespace mcs_homesite.Areas.DataTables.Pages
 {
+    [AutoValidateAntiforgeryToken]
     public class CreateModel : PageModel
     {
         private readonly mcs_homesiteContext _context;
@@ -22,7 +23,7 @@ namespace mcs_homesite.Areas.DataTables.Pages
 
         [BindProperty]
         public UserDto UserDto { get; set; } = default!;
-        
+
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
