@@ -14,6 +14,5 @@ namespace mcs_homesite.Areas.Models.Users
         public string UserName { get; set; } = string.Empty;
         [Required, PasswordPropertyText]
         public string Password { get; set; } = string.Empty;
-
     }
 }

@@ -1,27 +1,29 @@
-﻿using mcs_homesite.Areas.Models.Users;
+﻿using AutoMapper;
+using mcs_homesite.Areas.Models.Users;
 using mcs_homesite.Areas.DataTables.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using UserDto = mcs_homesite.Areas.Models.Users.UserDto;
 
 namespace mcs_homesite.Areas.DataTables.Pages
 {
     public class EditModel : PageModel
     {
         private readonly mcs_homesiteContext _context;
+        private readonly IMapper _mapper;
 
-        public EditModel(mcs_homesiteContext context)
+        public EditModel(mcs_homesiteContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [BindProperty]
-        public UserDto UserDto { get; set; } = default!;
+        public User UserModel { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
-            if (id == null || _context.UserDto == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -31,7 +33,7 @@ namespace mcs_homesite.Areas.DataTables.Pages
             {
                 return NotFound();
             }
-            UserDto = userDto;
+            UserModel = _mapper.Map<User>(userDto);
             return Page();
         }
 
@@ -44,7 +46,7 @@ namespace mcs_homesite.Areas.DataTables.Pages
                 return Page();
             }
 
-            _context.Attach(UserDto).State = EntityState.Modified;
+            _context.Attach(_mapper.Map<UserDto>(UserModel)).State = EntityState.Modified;
 
             try
             {
@@ -52,7 +54,7 @@ namespace mcs_homesite.Areas.DataTables.Pages
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UserDtoExists(UserDto.Id))
+                if (!UserDtoExists(UserModel.Id))
                 {
                     return NotFound();
                 }

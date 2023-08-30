@@ -1,4 +1,5 @@
-﻿using mcs_homesite.Areas.DataTables.Data;
+﻿using AutoMapper;
+using mcs_homesite.Areas.DataTables.Data;
 using mcs_homesite.Areas.Models.Users;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -8,20 +9,19 @@ namespace mcs_homesite.Areas.DataTables.Pages
     public class IndexModel : PageModel
     {
         private readonly mcs_homesiteContext _context;
+        private readonly IMapper _mapper;
 
-        public IndexModel(mcs_homesiteContext context)
+        public IndexModel(mcs_homesiteContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public IList<UserDto> UserDto { get; set; } = default!;
+        public IList<User> UserModel { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.UserDto != null)
-            {
-                UserDto = await _context.UserDto.ToListAsync();
-            }
+            UserModel = _mapper.Map<IList<User>>(await _context.UserDto.ToListAsync());
         }
     }
 }

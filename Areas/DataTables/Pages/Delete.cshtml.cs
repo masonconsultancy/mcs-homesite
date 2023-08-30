@@ -1,58 +1,58 @@
-﻿using mcs_homesite.Areas.Models.Users;
+﻿using AutoMapper;
+using mcs_homesite.Areas.Models.Users;
 using mcs_homesite.Areas.DataTables.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using UserDto = mcs_homesite.Areas.Models.Users.UserDto;
 
 namespace mcs_homesite.Areas.DataTables.Pages
 {
     public class DeleteModel : PageModel
     {
         private readonly mcs_homesiteContext _context;
+        private readonly IMapper _mapper;
 
-        public DeleteModel(mcs_homesiteContext context)
+        public DeleteModel(mcs_homesiteContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         [BindProperty]
-      public UserDto UserDto { get; set; } = default!;
+      public User UserModel { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
-            if (id == null || _context.UserDto == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var userdto = await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
+            var userDto = await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (userdto == null)
+            if (userDto == null)
             {
                 return NotFound();
             }
             else 
             {
-                UserDto = userdto;
+                UserModel = _mapper.Map<User>(userDto);
             }
             return Page();
         }
 
         public async Task<IActionResult> OnPostAsync(long? id)
         {
-            if (id == null || _context.UserDto == null)
+            if (id == null)
             {
                 return NotFound();
             }
-            var userdto = await _context.UserDto.FindAsync(id);
+            var userDto = await _context.UserDto.FindAsync(id);
 
-            if (userdto != null)
-            {
-                UserDto = userdto;
-                _context.UserDto.Remove(UserDto);
-                await _context.SaveChangesAsync();
-            }
+            if (userDto == null) return RedirectToPage("./Index");
+
+            _context.UserDto.Remove(userDto);
+            await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
         }

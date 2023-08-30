@@ -1,38 +1,40 @@
-﻿using mcs_homesite.Areas.Models.Users;
+﻿using AutoMapper;
+using mcs_homesite.Areas.Models.Users;
 using mcs_homesite.Areas.DataTables.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using UserDto = mcs_homesite.Areas.Models.Users.UserDto;
 
 namespace mcs_homesite.Areas.DataTables.Pages
 {
     public class DetailsModel : PageModel
     {
         private readonly mcs_homesiteContext _context;
+        private readonly IMapper _mapper;
 
-        public DetailsModel(mcs_homesiteContext context)
+        public DetailsModel(mcs_homesiteContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-      public UserDto UserDto { get; set; } = default!; 
+      public User UserModel { get; set; } = default!; 
 
         public async Task<IActionResult> OnGetAsync(long? id)
         {
-            if (id == null || _context.UserDto == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var userdto = await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
-            if (userdto == null)
+            var userDto = await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
+            if (userDto == null)
             {
                 return NotFound();
             }
             else 
             {
-                UserDto = userdto;
+                UserModel = _mapper.Map<User>(userDto);
             }
             return Page();
         }
