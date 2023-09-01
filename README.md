@@ -1,2 +1,2 @@
-# mcs-homesite
+# MCS-HomeSite
 My Home site

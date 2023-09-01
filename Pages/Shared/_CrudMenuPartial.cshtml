@@ -1,0 +1,13 @@
+﻿@model long?
+@{
+    var hidden = Model is null or 0;
+}
+<div class="d-flex justify-content-start">
+    <a asp-page="/Create"><i class="bi bi-plus-circle bi-options-font"></i></a>
+    @if (!hidden)
+    {
+        <a asp-route-id="@Model" asp-page="/Edit" data-vos="true" data-vos-id="Id"><i class="bi bi-pencil bi-options-font mx-2"></i></a>
+        <a asp-route-id="@Model" asp-page="/Details" data-vos="true" data-vos-id="Id"><i class="bi bi-view-list bi-options-font mx-2"></i></a>
+        <a asp-route-id="@Model" asp-page="/Delete" data-vos="true" data-vos-id="Id"><i class="bi bi-x-circle bi-options-font mx-2"></i></a>
+    }
+</div>

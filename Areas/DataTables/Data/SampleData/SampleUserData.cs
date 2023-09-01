@@ -1,6 +1,6 @@
-﻿using mcs_homesite.Areas.Models.Users;
+﻿using MCS.HomeSite.Areas.Models.Users;
 
-namespace mcs_homesite.Areas.DataTables.Data.SampleData;
+namespace MCS.HomeSite.Areas.DataTables.Data.SampleData;
 
 public static class SampleUserData
 {

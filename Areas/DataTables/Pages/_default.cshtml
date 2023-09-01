@@ -1,21 +1,16 @@
-﻿@model IList<mcs_homesite.Areas.Models.Users.User>
+﻿@model IList<MCS.HomeSite.Areas.Models.Users.User>
 
 <div class="row row-cols-1 row-cols-md-1 g-3 mb-3">
     <div class="col">
         <div class="card bg-dark border-highlight h-100">
-            <div class="card-body">
+            <div class="card-body overflow-x-scroll">
                 <h5 class="card-title">
                     <div class="flex-fill">Default Example</div>
                 </h5>
                 <h6 class="card-subtitle mb-2 text-muted">Simple Example with default options</h6>
                 <p class="card-text">
-                    <table id="defaultDemoTable" class="table display" style="width:100%">
+                    <table id="defaultDemoTable" class="table table-dark table-hover" style="width:100%">
                         <thead>
-                            <tr>
-                                <th colspan="6">
-                                    <a asp-page="Create"><i class="bi bi-plus-circle bi-options-font"></i></a>
-                                </th>
-                            </tr>
                             <tr>
                                 <th>
                                     @Html.DisplayNameFor(model => model[0].Id)
@@ -32,7 +27,6 @@
                                 <th>
                                     @Html.DisplayNameFor(model => model[0].Password)
                                 </th>
-                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -54,16 +48,17 @@
                                     <td>
                                         @Html.DisplayFor(modelItem => item.Password)
                                     </td>
-                                    <td>
-                                        <div class="d-flex justify-content-end">
-                                            <a asp-page="/Edit" asp-route-id="@item.Id"><i class="bi bi-pencil bi-options-font mx-2"></i></a>
-                                            <a asp-page="/Details" asp-route-id="@item.Id"><i class="bi bi-view-list bi-options-font mx-2"></i></a>
-                                            <a asp-page="/Delete" asp-route-id="@item.Id"><i class="bi bi-x-circle bi-options-font mx-2"></i></a>
-                                        </div>
-                                    </td>
                                 </tr>
                             }
                         </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="5">
+                                    <div id="defaultDemoMenu" data-crud-table="defaultDemoTable" data-crud-index="id">
+                                    </div>
+                                </th>
+                            </tr>
+                        </tfoot>
                     </table>
                 </p>
             </div>

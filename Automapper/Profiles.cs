@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using mcs_homesite.Areas.Models.Users;
+using MCS.HomeSite.Areas.Models.Users;
 
-namespace mcs_homesite.Automapper
+namespace MCS.HomeSite.Automapper
 {
     public class MappingProfiles : Profile
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace mcs_homesite.Pages
+namespace MCS.HomeSite.Pages
 {
     public class DemoModel : PageModel
     {

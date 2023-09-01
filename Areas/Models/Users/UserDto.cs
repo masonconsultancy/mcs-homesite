@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace mcs_homesite.Areas.Models.Users
+namespace MCS.HomeSite.Areas.Models.Users
 {
     public class UserDto
     {

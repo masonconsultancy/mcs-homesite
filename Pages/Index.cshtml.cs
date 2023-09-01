@@ -1,7 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace mcs_homesite.Pages
+namespace MCS.HomeSite.Pages
 {
     public class IndexModel : PageModel
     {
@@ -17,7 +16,7 @@ namespace mcs_homesite.Pages
 
         public void OnGet()
         {
-
+            _logger.LogInformation("Opened Home Page");
         }
     }
 }

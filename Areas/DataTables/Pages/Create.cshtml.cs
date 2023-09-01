@@ -1,18 +1,18 @@
 ﻿using AutoMapper;
-using mcs_homesite.Areas.Models.Users;
-using mcs_homesite.Areas.DataTables.Data;
+using MCS.HomeSite.Areas.DataTables.Data;
+using MCS.HomeSite.Areas.Models.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace mcs_homesite.Areas.DataTables.Pages
+namespace MCS.HomeSite.Areas.DataTables.Pages
 {
     [AutoValidateAntiforgeryToken]
     public class CreateModel : PageModel
     {
-        private readonly mcs_homesiteContext _context;
+        private readonly McsHomeSiteContext _context;
         private readonly IMapper _mapper;
 
-        public CreateModel(mcs_homesiteContext context, IMapper mapper)
+        public CreateModel(McsHomeSiteContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

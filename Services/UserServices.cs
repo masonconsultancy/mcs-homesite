@@ -1,22 +1,22 @@
 ﻿using AutoMapper;
-using mcs_homesite.Areas.DataTables.Data;
-using mcs_homesite.Areas.Models.Users;
+using MCS.HomeSite.Areas.DataTables.Data;
+using MCS.HomeSite.Areas.Models.Users;
 using Microsoft.EntityFrameworkCore;
 
-namespace mcs_homesite.Services
+namespace MCS.HomeSite.Services
 {
     public static class UserServices
     {
 
         public static RouteGroupBuilder MapUserServiceGroup(this RouteGroupBuilder group)
         {
-            group.MapGet("/GetUsers", async (mcs_homesiteContext context) => 
+            group.MapGet("/GetUsers", async (McsHomeSiteContext context) => 
                 context.UserDto.Any() ? 
                     Results.Ok(await context.UserDto.ToListAsync()) : Results.NoContent()).
                 Produces<UserResponse>().
                 Produces<UserResponse>(StatusCodes.Status204NoContent);
 
-            group.MapGet("/GetUser/{id:long?}", async (long? id, mcs_homesiteContext context) =>
+            group.MapGet("/GetUser/{id:long?}", async (long? id, McsHomeSiteContext context) =>
                 {
                     if (id == null)
                     {
@@ -29,7 +29,7 @@ namespace mcs_homesite.Services
                 Produces<UserResponse>(StatusCodes.Status404NotFound).
                 Produces<UserResponse>(StatusCodes.Status400BadRequest);
 
-            group.MapDelete("/RemoveUser/{id:long?}", async (long? id, mcs_homesiteContext context) =>
+            group.MapDelete("/RemoveUser/{id:long?}", async (long? id, McsHomeSiteContext context) =>
                 {
                     var userDto = await context.UserDto.FindAsync(id);
 
@@ -47,7 +47,7 @@ namespace mcs_homesite.Services
                 .Produces<UserResponse>(StatusCodes.Status204NoContent);
 
             // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-            group.MapPut("/UpdateUser/{id:long?}", async (long? id, User user, mcs_homesiteContext context, IMapper mapper) =>
+            group.MapPut("/UpdateUser/{id:long?}", async (long? id, User user, McsHomeSiteContext context, IMapper mapper) =>
             {
                 if (id != user.Id)
                 {
@@ -75,7 +75,7 @@ namespace mcs_homesite.Services
                 Produces<UserResponse>(StatusCodes.Status404NotFound).
                 Produces<UserResponse>(StatusCodes.Status204NoContent);
 
-            group.MapPost("/AddUser", async (User? user, mcs_homesiteContext context, IMapper mapper) =>
+            group.MapPost("/AddUser", async (User? user, McsHomeSiteContext context, IMapper mapper) =>
             {
                 if (user == null)
                 {

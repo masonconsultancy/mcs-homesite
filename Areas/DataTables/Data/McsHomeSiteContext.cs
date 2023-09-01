@@ -1,12 +1,11 @@
-﻿using mcs_homesite.Areas.DataTables.Data.SampleData;
+﻿using MCS.HomeSite.Areas.DataTables.Data.SampleData;
 using Microsoft.EntityFrameworkCore;
-using UserDto = mcs_homesite.Areas.Models.Users.UserDto;
 
-namespace mcs_homesite.Areas.DataTables.Data
+namespace MCS.HomeSite.Areas.DataTables.Data
 {
-    public class mcs_homesiteContext : DbContext
+    public class McsHomeSiteContext : DbContext
     {
-        public mcs_homesiteContext (DbContextOptions<mcs_homesiteContext> options)
+        public McsHomeSiteContext (DbContextOptions<McsHomeSiteContext> options)
             : base(options)
         {
         }
@@ -19,10 +18,10 @@ namespace mcs_homesite.Areas.DataTables.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserDto>().HasData(SampleUserData.Data());
+            modelBuilder.Entity<Models.Users.UserDto>().HasData(SampleUserData.Data());
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<UserDto> UserDto { get; set; } = default!;
+        public DbSet<Models.Users.UserDto> UserDto { get; set; } = default!;
     }
 }
