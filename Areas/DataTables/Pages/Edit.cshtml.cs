@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MCS.HomeSite.Areas.DataTables.Data;
-using MCS.HomeSite.Areas.Models.Users;
+using MCS.HomeSite.Data;
+using MCS.HomeSite.Data.Models.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +28,7 @@ namespace MCS.HomeSite.Areas.DataTables.Pages
                 return NotFound();
             }
 
-            var userDto =  await _context.UserDto.FirstOrDefaultAsync(m => m.Id == id);
+            var userDto =  await _context.Users.FirstOrDefaultAsync(m => m.Id == id);
             if (userDto == null)
             {
                 return NotFound();
@@ -50,7 +50,7 @@ namespace MCS.HomeSite.Areas.DataTables.Pages
 
             try
             {
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesWithAuditAsync(default,true);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -69,7 +69,7 @@ namespace MCS.HomeSite.Areas.DataTables.Pages
 
         private bool UserDtoExists(long? id)
         {
-          return (id != null) && (_context.UserDto?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (id != null) && (_context.Users?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MCS.HomeSite.Areas.Models.Users
+﻿namespace MCS.HomeSite.Data.Models.Users
 {
     public class UserResponse
     {

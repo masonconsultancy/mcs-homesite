@@ -1,0 +1,39 @@
+﻿@using MCS.HomeSite.Common
+@inject IUrlGenerator UrlGenerator
+<div class="row row-cols-1 row-cols-md-1 g-3 mb-3">
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body overflow-x-scroll">
+                <h5 class="card-title">
+                    <div class="flex-fill">Users</div>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Imported User List</h6>
+                <p class="card-text">
+                    <table id="userDataTable" class="table table-dark table-hover" style="width: 100%" data-url="@UrlGenerator.GeneratorUrl(EndpointPrefixes.Migrations, "GetUsers")">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Id
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    Email
+                                </th>
+                                <th>
+                                    UserName
+                                </th>
+                                <th>
+                                    Password
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

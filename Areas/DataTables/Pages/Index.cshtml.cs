@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using MCS.HomeSite.Areas.DataTables.Data;
-using MCS.HomeSite.Areas.Models.Users;
+using MCS.HomeSite.Data;
+using MCS.HomeSite.Data.Models.Users;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -22,7 +22,7 @@ namespace MCS.HomeSite.Areas.DataTables.Pages
 
         public async Task OnGetAsync()
         {
-            UserModel = _mapper.Map<IList<User>>(await _context.UserDto.ToListAsync());
+            UserModel = _mapper.Map<IList<User>>(await _context.Users.ToListAsync());
         }
 
         public PartialViewResult OnGetCrudMenuPartial(long? id)

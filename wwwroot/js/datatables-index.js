@@ -78,6 +78,36 @@
       }]
   });
 
+  const table4 = new DataTable("#userDataTable", {
+    "ajax": {
+      "url": $("#userDataTable").data("url"),
+      "type": "GET",
+      "dataSrc": ""
+    },
+    columns: [
+      {
+        data: "id"
+      },
+      {
+        data: "name"
+      },
+      {
+        data: "email"
+      },
+      {
+        data: "userName"
+      },
+      {
+        data: "password",
+        render: function (data, type) {
+          if (type === "display") {
+            return "************";
+          }
+          return data;
+        }
+      }]
+  });
+
   $('[data-crud-table]').each(function (e, x) {
     const index = $(x).data("crud-index");
     const menuPlaceHolder = "#" + $(x).attr("id");
@@ -95,6 +125,13 @@
       getCrudMenuWithId($(menuPlaceHolder), "/DataTables/Index", "CrudMenuPartial", id);
     });
     getCrudMenuWithId($(menuPlaceHolder), "/DataTables/Index", "CrudMenuPartial", 0);
+  });
+
+  $("#migrateData").on("click", function() {
+    $("#migrationDataPlaceholder").load("/DataMigration?handler=MigrationLogsPartial", function() {
+      $("#userDataTable").DataTable().ajax.reload();
+    });
+    
   });
 
 });

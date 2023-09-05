@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using MCS.HomeSite.Areas.Models.Users;
+using MCS.HomeSite.Data.Models.Users;
 
 namespace MCS.HomeSite.Automapper
 {

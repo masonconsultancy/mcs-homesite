@@ -1,6 +1,6 @@
-﻿using MCS.HomeSite.Areas.Models.Users;
+﻿using MCS.HomeSite.Data.Models.Users;
 
-namespace MCS.HomeSite.Areas.DataTables.Data.SampleData;
+namespace MCS.HomeSite.Data.SampleData;
 
 public static class SampleUserData
 {
@@ -35,7 +35,7 @@ public static class SampleUserData
             new UserDto
             {
                 Id = 4,
-                Email = "test.user4@email.com",
+                Email = "test.user4email.com",
                 Name = "Test User 4",
                 UserName = "TestUser4",
                 Password = "securepassword4"
@@ -54,7 +54,7 @@ public static class SampleUserData
                 Email = "test.user6@email.com",
                 Name = "Test User 6",
                 UserName = "TestUser6",
-                Password = "securepassword6"
+                Password = ""
             },
             new UserDto
             {

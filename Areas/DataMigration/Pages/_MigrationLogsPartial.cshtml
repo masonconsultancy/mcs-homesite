@@ -1,0 +1,50 @@
+﻿@model IList<MigrationLogDto>
+<div class="row row-cols-1 row-cols-md-1 g-3 mb-3">
+    <div class="col">
+        <div class="card bg-dark border-highlight h-100">
+            <div class="card-body overflow-x-scroll">
+                <h5 class="card-title">
+                    <div class="flex-fill">Migration</div>
+                </h5>
+                <h6 class="card-subtitle mb-2 text-muted">Migration Data Log</h6>
+                <p class="card-text">
+                    <table id="migrateDataTable" class="table table-dark table-hover" style="width: 100%">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Id)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].TableName)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Index)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model[0].Error)
+                            </th>
+                        </tr>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Id)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TableName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Index)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Error)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

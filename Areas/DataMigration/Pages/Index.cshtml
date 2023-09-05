@@ -1,0 +1,31 @@
+﻿@page
+@model IndexModel
+
+@{
+    ViewData["Title"] = "Data Migration";
+}
+
+<h1>Data Migration</h1>
+
+<div class="card">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Data Migration</h5>
+    <p class="card-text mb-3">To start the migration press the start button.</p>
+    <a id="migrateData" class="btn btn-primary">Start</a>
+    <div id="migrationDataPlaceholder">
+      <partial name="_MigrationLogsPartial" model="@Model.MigrationLogs" />
+    </div>
+  </div>
+</div>
+
+<partial name="_UsersPartial" model="@Model.Users"/>
+
+@section Scripts
+{
+  <script src="~/lib/datatables.net/jquery.datatables.min.js"></script>
+  <script src="~/lib/datatables.net-bs5/datatables.bootstrap5.min.js"></script>
+  <script src="~/js/datatables-index.js" asp-append-version="true"></script>
+}

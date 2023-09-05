@@ -1,19 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+using MCS.HomeSite.Data.CustomValidators;
 
-namespace MCS.HomeSite.Areas.Models.Users
+namespace MCS.HomeSite.Data.Models.Users
 {
-    public class UserDto
+    public class User
     {
-        [Key]
-        public long Id { get; set; }
+        public long? Id { get; set; }
         [Required]
         public string Name { get; set; } = string.Empty;
         [Required]
+        [ValidateEmail]
         public string Email { get; set; } = string.Empty;
         [Required]
         public string UserName { get; set; } = string.Empty;
-        [Required]
+        [Required, PasswordPropertyText]
         public string Password { get; set; } = string.Empty;
-
     }
 }
